@@ -17,6 +17,8 @@
 
 body {
   margin-top: 50px;
+  background-color: #9d9d9d;
+  color: #222;
 }
 
 h1 {
@@ -28,4 +30,20 @@ h1 {
 
 .muted {
   opacity: 0.5;
+}
+
+.panel, .panel-heading, .panel-footer, .panel > .list-group, .panel > .list-group > a > .list-group-item{
+  background-color: #222;
+  color: #9d9d9d;
+  border-color: #9d9d9d;
+  border-radius: 0px;
+}
+
+.panel > .list-group > a > .list-group-item:hover{
+  opacity: 0.6;
+  background-color: #090909;
+}
+
+.panel > .list-group > a {
+  text-decoration: none;
 }
