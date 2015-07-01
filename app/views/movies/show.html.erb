@@ -23,7 +23,7 @@
       <% if @movie.ratings.any? %>
       <div class="col-md-4">
         <% @movie.avg_rating.ceil.times do %>
-          <span class="glyphicon glyphicon-star star"></span>
+          <span class="glyphicon glyphicon-star star-gold"></span>
         <% end %>
         <% (10 - @movie.avg_rating.ceil).times do %>
           <span class="glyphicon glyphicon-star-empty"></span>
@@ -59,7 +59,7 @@
             <%= review.body %>
             <span style="float: right;">
               <% review.rating.rating.times do %>
-                <span class="glyphicon glyphicon-star star"></span>
+                <span class="glyphicon glyphicon-star star-gold"></span>
               <% end %>
               <% (10 - review.rating.rating).times do %>
                 <span class="glyphicon glyphicon-star-empty"></span>

@@ -1,24 +1,21 @@
 <%= render "layouts/errors", object: @review %>
 
+<div class="text-center">
 <%= bootstrap_form_for(@review) do |f| %>
   <%= f.text_area :body, rows: "5" %>
 
   <!-- Radio Buttons for star rating -->
-  <div class="text-center">
-
-  <% radio_value = 1 %>
-  <% 10.times do %>
-  <span class="radio-inline">
-    <label class="radio-inline">
-      <input name="rating" type="radio" value="<%= radio_value %>" id="radio<%= 11-radio_value %>">
-      <span></span>
-    </label>
-  </span>
-  <% radio_value += 1 %>
-  <% end %>
+  <div class="col-md-9 col-offset-3">
+    <% radio_value = 1 %>
+    <% 10.times do %>
+      <input class="star star<%= 11-radio_value %>" id="radio<%= 11-radio_value %>" type="radio" name="rating" value="<%= 11-radio_value %>">
+      <label class="star star<%= 11-radio_value %>" for="radio<%= 11-radio_value %>"></label>
+      <% radio_value += 1 %>
+    <% end %>
   </div>
 
   <br><br>
   <%= hidden_field(:movie, :id) %>
   <%= f.submit movie_id: @movie.id, class: "btn btn-success btn-block" %>
 <% end %>
+</div>
