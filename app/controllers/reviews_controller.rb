@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   def create
     @movie = Movie.find(params[:movie][:id])
     @review = Review.new(review_params)
-    @rating = Rating.new(rating: params[:review][:rating])
+    @rating = Rating.new(rating: params[:rating])
     if @review.save
       @review.rating = @rating
       @movie.reviews.push(@review)

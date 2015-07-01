@@ -2,7 +2,23 @@
 
 <%= bootstrap_form_for(@review) do |f| %>
   <%= f.text_area :body, rows: "5" %>
-  <%= f.number_field :rating %>
+
+  <!-- Radio Buttons for star rating -->
+  <div class="text-center">
+
+  <% radio_value = 1 %>
+  <% 10.times do %>
+  <span class="radio-inline">
+    <label class="radio-inline">
+      <input name="rating" type="radio" value="<%= radio_value %>" id="radio<%= 11-radio_value %>">
+      <span></span>
+    </label>
+  </span>
+  <% radio_value += 1 %>
+  <% end %>
+  </div>
+
+  <br><br>
   <%= hidden_field(:movie, :id) %>
   <%= f.submit movie_id: @movie.id, class: "btn btn-success btn-block" %>
 <% end %>

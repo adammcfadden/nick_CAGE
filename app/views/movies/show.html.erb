@@ -10,7 +10,9 @@
   </div>
   <% if @movie.video_url %>
     <div class="panel-body">
-      <iframe src="<%= @movie.video_url %>" width="640px" height="480px" frameborder="0px"></iframe>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe src="<%= @movie.video_url %>" class="embed-responsive-item" width="640px" height="480px" frameborder="0px"></iframe>
+      </div>
     </div>
   <% end %>
   <div class="panel-footer">
@@ -20,11 +22,11 @@
       </div>
       <% if @movie.ratings.any? %>
       <div class="col-md-4">
-        <% (10 - @movie.avg_rating.ceil).times do %>
-          <span class="glyphicon glyphicon-star-empty"></span>
-        <% end %>
         <% @movie.avg_rating.ceil.times do %>
           <span class="glyphicon glyphicon-star star"></span>
+        <% end %>
+        <% (10 - @movie.avg_rating.ceil).times do %>
+          <span class="glyphicon glyphicon-star-empty"></span>
         <% end %>
       </div>
       <div class="col-md-4">
@@ -56,11 +58,11 @@
           <li class="list-group-item">
             <%= review.body %>
             <span style="float: right;">
-              <% (10 - review.rating.rating).times do %>
-                <span class="glyphicon glyphicon-star-empty"></span>
-              <% end %>
               <% review.rating.rating.times do %>
                 <span class="glyphicon glyphicon-star star"></span>
+              <% end %>
+              <% (10 - review.rating.rating).times do %>
+                <span class="glyphicon glyphicon-star-empty"></span>
               <% end %>
             </span>
           </li>
