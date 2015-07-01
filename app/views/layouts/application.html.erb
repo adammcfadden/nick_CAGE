@@ -16,12 +16,12 @@
 
   <div class="container">
     <% if flash[:notice] %>
-      <div class="alert alert-success">
+      <div class="alert alert-success alert-dismissible" role="alert">
         <%= flash[:notice] %>
       </div>
     <% end %>
     <% if flash[:alert] %>
-      <div class="alert alert-danger">
+      <div class="alert alert-danger alert-dismissible" role="alert">
         <%= flash[:alert] %>
       </div>
     <% end %>

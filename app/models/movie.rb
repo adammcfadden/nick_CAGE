@@ -14,6 +14,6 @@ class Movie < ActiveRecord::Base
     ratings.each do |rating|
       rating_sum += rating.rating
     end
-    rating_sum.to_f / ratings.length.to_f
+    (rating_sum.to_f / ratings.length.to_f).round(2)
   end
 end

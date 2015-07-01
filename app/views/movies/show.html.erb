@@ -1,30 +1,48 @@
 <h3 class="text-center">
 </h3>
 
-<div class="panel text-center">
+<div class="panel text-center" id="movie-details-panel">
   <div class="panel-heading panel-title">
     <h3><%= @movie.title %></h3>
   </div>
   <div class="panel-body">
     <%= @movie.description %>
   </div>
+  <% if @movie.video_url %>
+    <div class="panel-body">
+      <iframe src="<%= @movie.video_url %>" width="640px" height="480px" frameborder="0px"></iframe>
+    </div>
+  <% end %>
   <div class="panel-footer">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <%= @movie.release_date.strftime("Released on %m/%d/%Y") %>
       </div>
-      <div class="col-md-6">
-        Community Rating: <%= @movie.avg_rating %>/10
+      <% if @movie.ratings.any? %>
+      <div class="col-md-4">
+        <% (10 - @movie.avg_rating.ceil).times do %>
+          <span class="glyphicon glyphicon-star-empty"></span>
+        <% end %>
+        <% @movie.avg_rating.ceil.times do %>
+          <span class="glyphicon glyphicon-star star"></span>
+        <% end %>
       </div>
+      <div class="col-md-4">
+        <% if @movie.ratings.length == 1 %>
+        This Movie has <%= @movie.ratings.length %> rating.
+        <% else %>
+        This Movie has <%= @movie.ratings.length %> ratings.
+        <% end %>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
 
-<%= link_to "Review #{@movie.title}", new_review_path(movie_id: @movie.id), class: "btn btn-success btn-block" %>
-<br>
+
 <div class="btn-group btn-group-sm btn-group-justified">
-  <%= link_to "Return to Movies", movies_path, class: "btn btn-info" %>
   <%= link_to "Edit #{@movie.title}", edit_movie_path(@movie), class: "btn btn-warning" %>
+  <%= link_to "Review #{@movie.title}", new_review_path(movie_id: @movie.id), class: "btn btn-success btn-block" %>
   <%= link_to "Delete #{@movie.title}", movie_path(@movie), class: "btn btn-danger",
                                   data: { confirm: "REALLY?! :D :D", method: "delete" }%>
 
@@ -35,8 +53,16 @@
     <ul class="list-group">
       <% @movie.reviews.each do |review| %>
         <%= link_to review_path(review) do %>
-          <li class="list-group-item text-center">
+          <li class="list-group-item">
             <%= review.body %>
+            <span style="float: right;">
+              <% (10 - review.rating.rating).times do %>
+                <span class="glyphicon glyphicon-star-empty"></span>
+              <% end %>
+              <% review.rating.rating.times do %>
+                <span class="glyphicon glyphicon-star star"></span>
+              <% end %>
+            </span>
           </li>
         <% end %>
       <% end %>
