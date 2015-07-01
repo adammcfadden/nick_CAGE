@@ -3,7 +3,7 @@
 
 <div class="panel text-center" id="movie-details-panel">
   <div class="panel-heading panel-title">
-    <h3><%= @movie.title %></h3>
+    <h2 class="star-gold"><%= @movie.title %></h2>
   </div>
   <div class="panel-body">
     <%= @movie.description %>
@@ -55,7 +55,7 @@
     <ul class="list-group">
       <% @movie.reviews.each do |review| %>
         <%= link_to review_path(review) do %>
-          <li class="list-group-item">
+          <li class="list-group-item reviews">
             <%= review.body %>
             <span style="float: right;">
               <% review.rating.rating.times do %>
@@ -65,6 +65,7 @@
                 <span class="glyphicon glyphicon-star-empty"></span>
               <% end %>
             </span>
+            <hr>
           </li>
         <% end %>
       <% end %>

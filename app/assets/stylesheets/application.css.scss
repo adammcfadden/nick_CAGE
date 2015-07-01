@@ -40,8 +40,8 @@ h1 {
 }
 
 .panel > .list-group > a > .list-group-item:hover{
-  opacity: 0.6;
   background-color: #090909;
+  color: #FD4;
 }
 
 .panel > .list-group > a {
@@ -52,7 +52,7 @@ h1 {
   margin-bottom: 0;
 }
 
-.star-gold {
+.star-gold, .navbar-inverse .navbar-brand{
   color: #FD4;
 }
 
@@ -83,4 +83,15 @@ label.star:hover{
 label.star:before{
   content:'\e007';
   font-family: 'Glyphicons Halflings';
+}
+
+.panel > .list-group > a > .reviews > hr {
+  margin: 0;
+  margin-top: 15px;
+  border-color: #9d9d9d;
+}
+
+li.list-group-item.reviews {
+  padding-bottom: 0px;
+  padding-top: 15px;
 }

@@ -8,8 +8,11 @@
 </head>
 <body>
   <nav class='navbar navbar-inverse navbar-fixed-top navbar-success' role='navigation'>
+    <div class="navbar-header">
+      <%= link_to "The Cage", movies_path, class: "navbar-brand star-gold" %>
+
+    </div>
     <ul class='nav navbar-nav'>
-      <li><%= link_to "Home", movies_path %></li>
       <li><%= link_to "Add Movie", new_movie_path %></li>
     </ul>
   </nav>
