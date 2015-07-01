@@ -1,0 +1,8 @@
+<%= render "layouts/errors", object: @review %>
+
+<%= bootstrap_form_for(@review) do |f| %>
+  <%= f.text_area :body, rows: "5" %>
+  <%= f.number_field :rating %>
+  <%= hidden_field(:movie, :id) %>
+  <%= f.submit movie_id: @movie.id, class: "btn btn-success btn-block" %>
+<% end %>

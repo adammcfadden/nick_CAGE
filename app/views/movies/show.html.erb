@@ -20,6 +20,8 @@
   </div>
 </div>
 
+<%= link_to "Review #{@movie.title}", new_review_path(movie_id: @movie.id), class: "btn btn-success btn-block" %>
+<br>
 <div class="btn-group btn-group-sm btn-group-justified">
   <%= link_to "Return to Movies", movies_path, class: "btn btn-info" %>
   <%= link_to "Edit #{@movie.title}", edit_movie_path(@movie), class: "btn btn-warning" %>
@@ -27,3 +29,11 @@
                                   data: { confirm: "REALLY?! :D :D", method: "delete" }%>
 
 </div>
+
+<% if @movie.reviews.any? %>
+  <% @movie.reviews.each do |review| %>
+    <li>
+      <%= review.body %>
+    </li>
+  <% end %>
+<% end %>
