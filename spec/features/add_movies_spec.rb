@@ -6,7 +6,6 @@ describe 'The adding movies path' do
     fill_in 'movie_title', with: 'Con Air'
     fill_in 'movie_description', with: 'The one on the plane'
     fill_in 'movie_release_date', with: '01/05/1995'
-    fill_in 'movie_rating', with: '5'
     click_on 'Create Movie'
     expect(page).to have_content('Con Air')
   end
@@ -15,7 +14,6 @@ describe 'The adding movies path' do
     visit new_movie_path
     fill_in 'movie_title', with: 'Con Air'
     fill_in 'movie_release_date', with: '01/05/1995'
-    fill_in 'movie_rating', with: '5'
     click_on 'Create Movie'
     expect(page).to have_content('Please fix these errors')
   end

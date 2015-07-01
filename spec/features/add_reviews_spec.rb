@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'The adding reviews path' do
   it 'will let the user add a review to a movie, will display the reviews on the movie page' do
-    movie = Movie.create(title: "Con Air", description: "the one with a plane", release_date: "02/09/1995", rating: "8")
+    movie = Movie.create(title: "Con Air", description: "the one with a plane", release_date: "02/09/1995")
     visit movie_path(movie)
     click_on "Review Con Air"
     expect(page).to have_content 'Add a New Review to Con Air'
@@ -13,7 +13,7 @@ describe 'The adding reviews path' do
   end
 
   it 'will return an error if a field is left empty' do
-    movie = Movie.create(title: "Con Air", description: "the one with a plane", release_date: "02/09/1995", rating: "8")
+    movie = Movie.create(title: "Con Air", description: "the one with a plane", release_date: "02/09/1995")
     visit movie_path(movie)
     click_on "Review Con Air"
     expect(page).to have_content 'Add a New Review to Con Air'

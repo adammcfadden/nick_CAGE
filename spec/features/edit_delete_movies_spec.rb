@@ -6,7 +6,6 @@ describe 'The editing and deleting movies path' do
     fill_in 'movie_title', with: 'Con Air'
     fill_in 'movie_description', with: 'The one on the plane'
     fill_in 'movie_release_date', with: '01/05/1995'
-    fill_in 'movie_rating', with: '5'
     click_on 'Create Movie'
     click_on 'Con Air'
     click_on 'Edit'
