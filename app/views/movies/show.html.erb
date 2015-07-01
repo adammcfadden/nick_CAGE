@@ -29,11 +29,17 @@
                                   data: { confirm: "REALLY?! :D :D", method: "delete" }%>
 
 </div>
-
+<br>
 <% if @movie.reviews.any? %>
-  <% @movie.reviews.each do |review| %>
-    <li>
-      <%= review.body %>
-    </li>
-  <% end %>
+  <div class="panel">
+    <ul class="list-group">
+      <% @movie.reviews.each do |review| %>
+        <%= link_to review_path(review) do %>
+          <li class="list-group-item text-center">
+            <%= review.body %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 <% end %>

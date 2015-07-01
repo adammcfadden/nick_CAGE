@@ -3,19 +3,19 @@
 <div class="panel">
 
 
-<% if @movies.any? %>
-  <ul class="list-group">
-    <% @movies.each do |movie| %>
-        <%= link_to movie_path(movie) do %>
-          <li class="list-group-item text-center">
-            <%= movie.title %>
-          </li>
-        <% end %>
-    <% end %>
-  </ul>
+  <% if @movies.any? %>
+    <ul class="list-group">
+      <% @movies.each do |movie| %>
+          <%= link_to movie_path(movie) do %>
+            <li class="list-group-item text-center">
+              <%= movie.title %>
+            </li>
+          <% end %>
+      <% end %>
+    </ul>
 
 
-<% else %>
-  <h3>Nick's life works have been deleted, sorry :(</h3>
-<% end %>
+  <% else %>
+    <h3>Nick's life works have been deleted, sorry :(</h3>
+  <% end %>
 </div>
