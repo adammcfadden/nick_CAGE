@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     if @review.update(movie_params)
       flash[:notice] = "Review updated, Nick thanks you."
-      redirect_to movie_path(@review)
+      redirect_to movie_path(@movie)
     else
       render :edit
     end
@@ -41,6 +41,12 @@ class ReviewsController < ApplicationController
     flash[:alert] = "Nick is really disappointed in you for deleting this :("
     redirect_to movies
   end
+
+  # def show
+  #   @review = Review.find(params[:id])
+  #   @movie = @review.movie
+  #   redirect_to movie_path(@movie)
+  # end
 
 private
   def review_params

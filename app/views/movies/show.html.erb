@@ -54,20 +54,18 @@
   <div class="panel">
     <ul class="list-group">
       <% @movie.reviews.each do |review| %>
-        <%= link_to review_path(review) do %>
-          <li class="list-group-item reviews">
-            <%= review.body %>
-            <span style="float: right;">
-              <% review.rating.rating.times do %>
-                <span class="glyphicon glyphicon-star star-gold"></span>
-              <% end %>
-              <% (10 - review.rating.rating).times do %>
-                <span class="glyphicon glyphicon-star-empty"></span>
-              <% end %>
-            </span>
-            <hr>
-          </li>
-        <% end %>
+        <li class="list-group-item reviews" id="<%= review.id %>">
+          <%= review.body %>
+          <span style="float: right;">
+            <% review.rating.rating.times do %>
+              <span class="glyphicon glyphicon-star star-gold"></span>
+            <% end %>
+            <% (10 - review.rating.rating).times do %>
+              <span class="glyphicon glyphicon-star-empty"></span>
+            <% end %>
+          </span>
+          <hr>
+        </li>
       <% end %>
     </ul>
   </div>

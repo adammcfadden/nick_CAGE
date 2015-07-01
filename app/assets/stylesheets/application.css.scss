@@ -24,7 +24,7 @@ body {
 h1 {
   padding-bottom: 9px;
   margin: 40px 0 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #222;
   text-align: center;
 }
 
@@ -32,19 +32,19 @@ h1 {
   opacity: 0.5;
 }
 
-.panel, .panel-heading, .panel-footer, .panel > .list-group, .panel > .list-group > a > .list-group-item{
+.panel, .panel-heading, .panel-footer, .panel > .list-group, .panel > .list-group > a > .list-group-item, .panel > .list-group > .list-group-item{
   background-color: #222;
   color: #9d9d9d;
   border-color: #9d9d9d;
   border-radius: 0px;
 }
 
-.panel > .list-group > a > .list-group-item:hover{
+.panel > .list-group > a > .list-group-item:hover, .panel > .list-group > .list-group-item:hover{
   background-color: #090909;
   color: #FD4;
 }
 
-.panel > .list-group > a {
+.panel > .list-group > a, .panel > .list-group {
   text-decoration: none;
 }
 
@@ -85,10 +85,10 @@ label.star:before{
   font-family: 'Glyphicons Halflings';
 }
 
-.panel > .list-group > a > .reviews > hr {
+.panel > .list-group > .reviews > hr {
   margin: 0;
   margin-top: 15px;
-  border-color: #9d9d9d;
+  border-color: transparent;
 }
 
 li.list-group-item.reviews {
