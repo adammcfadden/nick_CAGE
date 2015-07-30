@@ -1,89 +1,31 @@
-## APP NAME
+##The Cage
 
-<a href="APP LINK IF APPLICABLE" target="#"><APP LINK NAME></a>
+###Description
+Welcome to The Cage, a fansite for the most worthy of actors the one and only Nick Cage. The goal of this project was to practice using the Rails framework, and have full CRUD functionality throughout.
 
-By Ian MacDonald (<a href="https://github.com/matchbookmac" target="#">GitHub</a>)
 
-@ Epicodus Programming School, Portland, OR
+To follow along and build your own version of this app go to <a href="https://www.learnhowtoprogram.com/lessons/fan-site-wednesday-thursday-classwork" target="#">LearnHowToProgram</a>
 
-GNU General Public License, version 3 (see below). Copyright (c) 2015 Ian C. MacDonald.
+###To open the site locally run the following code:
 
-### Description
-
-**APP NAME**
-
-<DESCRIPTION>
-
-### Author(s)
-
-Ian MacDonald
-
-### Setup
-
-This app was written in `Rails '4.2.3'`.
-
-Clone this repo with
-```console
-> git clone https://github.com/matchbookmac/<REPO NAME>.git
+```
+git clone https://github.com/adammcfadden/nick_CAGE.git
+bundle
+rake db:create
+rake db:migrate
+rails s
 ```
 
-Install gems:
+If testing also run: 
 
-```console
-> bundle install
+```
+rake db:test:prepare
 ```
 
-Create database
-```console
-> rake db:create
-> rake db:migrate
-> rake db:test:prepare
-```
+###Author
+Adam McFadden
 
-Start App:
-```console
-> rails s
-```
+###License
+GPL v2
 
-### Database Schema
-
-List of relations
-
-   Name     | Type  
- ---------- | -------
- <relation_0>    | table
- <relation_1>   | table
-
-<relation_0> table
-
-id  | first_name | last_name | stylist_id
-----|------------|-----------|------------
-int | varchar    | varchar   | int
-
-<relation_1> table
-
-id  | first_name | last_name
-----|------------|-----------
-int | varchar    | varchar
-
-bands_venues join table
-
-<relation_0>_id | <relation_1>_id
---------|---------
-int     | int
-
-### License ###
-Copyright  (C)  2015  Ian C. MacDonald
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or    
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Copyright &copy; Adam McFadden 2015.
